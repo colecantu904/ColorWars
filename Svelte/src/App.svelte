@@ -16,8 +16,6 @@
 
 </script>
 
-<!--I want it to be able to give it two color names, (or hex), and configure the database and buttons to work with ith perfectly -->
-
 <main>
   {#each colorRecords as value}
     <p>{value[1]}</p>
