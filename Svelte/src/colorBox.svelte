@@ -1,3 +1,7 @@
+<svelte:head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</svelte:head>
+
 <!-- Simple component that accepts a color style and applies to the button, needs better styling -->
 <script>
 	import { quintOut } from 'svelte/easing';
