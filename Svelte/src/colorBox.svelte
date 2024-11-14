@@ -8,7 +8,8 @@
 
   let currentClicks = 0;
   let canClick = true;
-  const globalTimer = 1.5;
+  let fontsize = 1;
+  const globalTimer = 1;
   
 
   // we need to functions, onClick that updates the current amount of clicks and checks if you have stopped clikcing for so many seconds
@@ -46,6 +47,11 @@
       let click = currentClicks;
       setTimeout(() => {updatePb( key, click )}, 2000);
     }
+
+    function calcSize( clicks ) {
+      return clicks * 20;
+    }
+
   }
 
 </script>
@@ -54,7 +60,7 @@
 <div class="color-button">
   <button style="background-color: {color};" on:click={() => onClick()}>
     {#if currentClicks != 0}
-      + {currentClicks}
+      <p style="font-size: 175%;">+&nbsp;{currentClicks}</p>
     {:else}
       <div></div>
     {/if}
@@ -65,8 +71,8 @@
 <style>
   .color-button {
     width: 100vw;
-    height: 90vh;
-      
+    height: 80vh;
+    max-width: 50%;
   }
 
   button {

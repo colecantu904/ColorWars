@@ -1,10 +1,14 @@
+<svelte:head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</svelte:head>
+
 <script lang="ts">
   import Counter from './lib/Counter.svelte'
   import ColorBox from './colorBox.svelte';
   import InfoBox from './infoBox.svelte';
   import { pb, records1 } from './lib/pocketbase'
 
-  let colorRecords = Array.from({ length: records1.length }, (_, index) => [records1[index].id, records1[index].clicks]);
+  let colorRecords = Array.from({ length: records1.length }, (_, index) => [records1[index].id, records1[index].clicks, records1[index].color_id]);
   console.log(colorRecords);
 
   for (let i = 0; i < colorRecords.length; i++) {
@@ -22,7 +26,7 @@
 <main>
   <div class="container">
     {#each colorRecords as value}
-      <p>{value[1]}&nbsp;&nbsp;</p>
+      <p>{value[2]}  {value[1]}&nbsp;&nbsp;</p>
     {/each}
   </div>
 
