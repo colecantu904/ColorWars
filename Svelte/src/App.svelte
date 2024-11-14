@@ -16,14 +16,29 @@
 
 </script>
 
+<!-- Basically we need to just have a click adder that increases with each click, then, when the user stops clicking for a few seconds 
+ (1.5 secs) then we will disable the button, push to pb, then renable the button (it can be button independant)-->
+
 <main>
-  {#each colorRecords as value}
-    <p>{value[1]}</p>
-  {/each}
+  <div class="container">
+    {#each colorRecords as value}
+      <p>{value[1]}&nbsp;&nbsp;</p>
+    {/each}
+  </div>
+
+  <div class="container">
     {#each records1 as record}
       <ColorBox color={record.color_id} pb={pb} key={record.id} />
     {/each}
+  </div>
+  
 </main>
 
 <style>
+  .container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 </style>
